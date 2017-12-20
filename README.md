@@ -18,7 +18,7 @@ $ npm i react-native-svg-animations --save
 ## Demo
 AnimatedSVGPath | AnimatedSVGPaths
 ----------------|-----------------
-![300][]center[AnimatedSVGPath](examples/HiSVG/hi_1.gif) | ![300][]center[AnimatedSVGPaths](examples/IngenuityPreloaderSVG/preloader_1.gif)
+![300][AnimatedSVGPath](examples/HiSVG/hi_1.gif) | ![300][AnimatedSVGPaths](examples/IngenuityPreloaderSVG/preloader_1.gif)
 
 ## Usage
 

@@ -4,10 +4,8 @@
 
 ## Dependencies
 
-```
-$ npm i svg-path-properties --save 
-$ npm i react-native-svg --save
-```
+* `svg-path-properties` 
+* `react-native-svg`
 
 ## Installation
 

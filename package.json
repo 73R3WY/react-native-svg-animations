@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://bitbucket.org/ingenuityph/react-native-svg-animations"
   },
-  "homepage": "https://bitbucket.org/ingenuityph/react-native-svg-animations"
+  "homepage": "https://bitbucket.org/ingenuityph/react-native-svg-animations",
+  "dependencies": {
+    "react-native-svg": "^5.5.1",
+    "svg-path-properties": "^0.4.1"
+  }
 }

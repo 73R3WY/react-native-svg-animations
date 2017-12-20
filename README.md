@@ -1,4 +1,4 @@
-# react-native-svg-animations
+# react-native-svg-animations [![npm version](https://badge.fury.io/js/react-native-svg-animations.svg)](https://badge.fury.io/js/react-native-svg-animations)
 
 > SVG Animations wrapper for react-native. Based on examples from this project: https://github.com/ethantran/react-native-examples
 

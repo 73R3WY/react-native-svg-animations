@@ -24,6 +24,7 @@ class AnimatedSVGPath extends Component {
     delay: PropTypes.number,
     width: PropTypes.number,
     scale: PropTypes.number,
+    fill: PropTypes.string,
   };
   
   static defaultProps = {

@@ -46,7 +46,7 @@ This package contains wrapper components for displaying animated SVG in react-na
 Component to display a single animated SVG Path.
 See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/examples/HiSVG">Hi example</a> for the complete implementation.
 
-<img align="right" src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/HiSVG/hi_2.gif" width="300">
+<img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/HiSVG/hi_2.gif" width="300">
 
 ```javascript
   <View>
@@ -79,7 +79,7 @@ where the properties are:
 Component to display a multiple animated SVG Paths.
 See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/examples/IngenuityPreloaderSVG">Ingenuity preloader example</a> for the complete implementation.
 
-<img align="right" src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_2.gif" width="300">
+<img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_2.gif" width="300">
 
 ```javascript
   <View>

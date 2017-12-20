@@ -2,10 +2,17 @@
 
 > SVG Animations wrapper for react-native.
 
+## Dependencies
+
+```
+$ npm i svg-path-properties --save 
+$ npm i react-native-svg --save
+```
+
 ## Installation
 
 ```
-$
+$ npm i react-native-svg-animations --save
 ```
 
 ## Usage
@@ -20,4 +27,4 @@ $
 
 ## License
 
-ISC
+MIT

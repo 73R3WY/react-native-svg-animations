@@ -16,24 +16,9 @@ $ npm i react-native-svg-animations --save
 ```
 
 ## Demo
-<table>
-  <tr>
-    <td>
-      <strong>AnimatedSVGPath</strong>
-    </td>
-    <td>
-      <strong>AnimatedSVGPaths</strong>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/HiSVG/hi_1.gif" width="300">
-    </td>
-    <td>
-      <img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_1.gif" width="300">
-    </td>
-  </tr>
-</table>
+AnimatedSVGPath | AnimatedSVGPaths
+----------------------------------
+![AnimatedSVGPath](examples/HiSVG/hi_1.gif) | ![AnimatedSVGPaths](https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_1.gif)
 
 ## Usage
 

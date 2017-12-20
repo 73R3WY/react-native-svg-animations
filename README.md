@@ -16,9 +16,25 @@ $ npm i react-native-svg-animations --save
 ```
 
 ## Demo
-AnimatedSVGPath | AnimatedSVGPaths
-----------------|-----------------
-![AnimatedSVGPath](examples/HiSVG/hi_1.gif) | ![AnimatedSVGPaths](examples/IngenuityPreloaderSVG/preloader_1.gif)
+
+<table>
+  <tr>
+    <td>
+      <strong>AnimatedSVGPath</strong>
+    </td>
+    <td>
+      <strong>AnimatedSVGPaths</strong>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/HiSVG/hi_1.gif" width="300">
+    </td>
+    <td>
+      <img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_1.gif" width="300">
+    </td>
+  </tr>
+</table>
 
 ## Usage
 
@@ -33,7 +49,7 @@ See [Hi example](https://github.com/73R3WY/react-native-svg-animations/tree/mast
 
 ![AnimatedSVGPath](examples/HiSVG/hi_2.gif)
 
-:::javascript
+```javascript
   <View>
     <AnimatedSVGPath
       strokeColor={"green"}
@@ -46,6 +62,7 @@ See [Hi example](https://github.com/73R3WY/react-native-svg-animations/tree/mast
       d={d}
     />
   </View>
+```
 
 where the properties are:
 * `d` - the SVG Path to be animated. (required)
@@ -65,7 +82,7 @@ See [Ingenuity preloader example](https://github.com/73R3WY/react-native-svg-ani
 
 ![AnimatedSVGPaths](examples/IngenuityPreloaderSVG/preloader_2.gif)
 
-:::javascript
+```javascript
   <View>
     <AnimatedSVGPaths
       strokeColor={"red"}
@@ -78,6 +95,7 @@ See [Ingenuity preloader example](https://github.com/73R3WY/react-native-svg-ani
       ds={ds}
     />
   </View>
+```
 
 where the properties are:
 * `ds` - the SVG Paths to be animated, must be an array. (required)

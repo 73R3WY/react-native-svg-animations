@@ -47,7 +47,7 @@ See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/e
 <img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/HiSVG/hi_2.gif" width="300">
 
 ```javascript
-import AnimatedSVGPath from 'react-native-svg-animations';
+import { AnimatedSVGPath } from 'react-native-svg-animations';
 ```
 
 ...
@@ -86,7 +86,7 @@ See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/e
 <img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_2.gif" width="300">
 
 ```javascript
-import AnimatedSVGPaths from 'react-native-svg-animations';
+import { AnimatedSVGPaths } from 'react-native-svg-animations';
 ```
 
 ...

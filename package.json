@@ -1,6 +1,6 @@
 {
   "name": "react-native-svg-animations",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "SVG Animations wrapper for react-native.",
   "main": "index.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/ingenuityph/react-native-svg-animations"
+    "url": "git+ssh://git@bbitbucket.org/ingenuityph/react-native-svg-animations.git"
   },
   "keywords": [
     "react-native",

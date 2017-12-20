@@ -1,0 +1,27 @@
+{
+  "name": "react-native-svg-animations",
+  "version": "0.1.0",
+  "description": "SVG Animations wrapper for react-native.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/73R3WY/react-native-svg-animations.git"
+  },
+  "keywords": [
+    "react-native",
+    "svg",
+    "animations"
+  ],
+  "author": "Jeremy Patrick Pacabis <jeremy@ingenuity.ph> (https://ingenuity.ph)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/73R3WY/react-native-svg-animations/issues"
+  },
+  "homepage": "https://github.com/73R3WY/react-native-svg-animations#readme"
+}

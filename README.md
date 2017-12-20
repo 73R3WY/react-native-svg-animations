@@ -17,8 +17,8 @@ $ npm i react-native-svg-animations --save
 
 ## Demo
 AnimatedSVGPath | AnimatedSVGPaths
-----------------------------------
-![AnimatedSVGPath](examples/HiSVG/hi_1.gif) | ![AnimatedSVGPaths](https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_1.gif)
+----------------|-----------------
+![300][]center[AnimatedSVGPath](examples/HiSVG/hi_1.gif) | ![300][]center[AnimatedSVGPaths](examples/IngenuityPreloaderSVG/preloader_1.gif)
 
 ## Usage
 
@@ -33,7 +33,7 @@ See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/e
 
 <img align="right" src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/HiSVG/hi_2.gif" width="300">
 
-```javascript
+:::javascript
   <View>
     <AnimatedSVGPath
       strokeColor={"green"}
@@ -46,7 +46,6 @@ See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/e
       d={d}
     />
   </View>
-```
 
 where the properties are:
 * `d` - the SVG Path to be animated. (required)
@@ -66,7 +65,7 @@ See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/e
 
 <img align="right" src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_2.gif" width="300">
 
-```javascript
+:::javascript
   <View>
     <AnimatedSVGPaths
       strokeColor={"red"}
@@ -79,7 +78,6 @@ See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/e
       ds={ds}
     />
   </View>
-```
 
 where the properties are:
 * `ds` - the SVG Paths to be animated, must be an array. (required)

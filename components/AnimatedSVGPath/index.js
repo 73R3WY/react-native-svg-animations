@@ -25,6 +25,7 @@ class AnimatedSVGPath extends Component {
     width: PropTypes.number,
     scale: PropTypes.number,
     fill: PropTypes.string,
+    loop: PropTypes.bool
   };
   
   static defaultProps = {
@@ -36,6 +37,7 @@ class AnimatedSVGPath extends Component {
     scale: 1,
     height,
     width,
+    loop: true
   };
   
   constructor(props) {
@@ -50,6 +52,7 @@ class AnimatedSVGPath extends Component {
     const {
       delay,
       duration,
+      loop,
     } = this.props;
     this.strokeDashoffset.setValue(this.length);
     Animated.sequence([
@@ -58,7 +61,11 @@ class AnimatedSVGPath extends Component {
         toValue: 0,
         duration: duration,
       })
-    ]).start(() => this.animate());
+    ]).start(() => {
+      if (loop) {
+          this.animate();
+      }
+    });
   }
 
   componentDidMount() {

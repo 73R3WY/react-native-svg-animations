@@ -63,6 +63,7 @@ import { AnimatedSVGPath } from 'react-native-svg-animations';
       scale={0.75}
       delay={100}
       d={d}
+      loop={false}
     />
   </View>
 ```
@@ -77,6 +78,7 @@ where the properties are:
 * `delay` - time in `ms` before starting animation. (defaults to 1000ms or 1s)
 * `duration` - time in `ms` to complete the path drawing from starting point to ending point. (defaults to 1000ms or 1s)
 * `fill` - the color fill of the closed path. (defaults to none)
+* `loop` - whether the animation loops infinitely. (defaults to true)
 
 ###### AnimatedSVGPaths
 

@@ -25,7 +25,8 @@ class AnimatedSVGPath extends Component {
     width: PropTypes.number,
     scale: PropTypes.number,
     fill: PropTypes.string,
-    loop: PropTypes.bool
+    loop: PropTypes.bool,
+    lineCap: PropTypes.string,
   };
   
   static defaultProps = {
@@ -37,7 +38,8 @@ class AnimatedSVGPath extends Component {
     scale: 1,
     height,
     width,
-    loop: true
+    loop: true,
+    lineCap: "butt"
   };
   
   constructor(props) {
@@ -81,6 +83,7 @@ class AnimatedSVGPath extends Component {
       height,
       strokeColor,
       strokeWidth,
+      lineCap,
     } = this.props;
     return (
       <Svg
@@ -95,7 +98,7 @@ class AnimatedSVGPath extends Component {
           scale={scale}
           fill={fill}
           d={d}
-          strokeLinecap="square"
+          strokeLinecap={lineCap}
         />
       </Svg>
     );

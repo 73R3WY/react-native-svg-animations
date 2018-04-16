@@ -95,6 +95,7 @@ class AnimatedSVGPath extends Component {
           scale={scale}
           fill={fill}
           d={d}
+          strokeLinecap="square"
         />
       </Svg>
     );

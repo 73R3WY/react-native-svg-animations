@@ -39,11 +39,9 @@ class OffsetSVGPath extends Component {
     height,
     width,
     loop: true,
-    lineCap: "butt"
+    lineCap: "butt",
+    offset: 0,
   };
-
-  state = {offset}
-
   
   constructor(props) {
     super(props);
@@ -70,6 +68,7 @@ class OffsetSVGPath extends Component {
       strokeColor,
       strokeWidth,
       lineCap,
+
     } = this.props;
     return (
       <Svg

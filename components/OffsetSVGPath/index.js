@@ -45,12 +45,11 @@ class OffsetSVGPath extends Component {
   
   constructor(props) {
     super(props);
+    const { d } = this.props;
+    const properties = svgPathProperties(d)
     this.state = {
       offset: 0,
     }
-    const { d } = this.props;
-    const properties = svgPathProperties(d)
-    this.length = properties.getTotalLength();
   }
   
   componentWillReceiveProps(nextProps) {
@@ -69,15 +68,16 @@ class OffsetSVGPath extends Component {
       strokeWidth,
       lineCap,
 
-    } = this.props;
+    } = this.props
+    const length = svgPathProperties(d).getTotalLength()
     return (
       <Svg
         height={(height * scale) + 5}
         width={(width * scale) + 5}
       >
         <Path
-          strokeDasharray={[this.length, this.length]}
-          strokeDashoffset={ (1 - this.state.offset) * this.length}
+          strokeDasharray={[length, length]}
+          strokeDashoffset={ (1 - this.state.offset) * length}
           strokeWidth={strokeWidth}
           stroke={strokeColor}
           scale={scale}

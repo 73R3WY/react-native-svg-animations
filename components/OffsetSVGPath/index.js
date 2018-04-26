@@ -77,7 +77,7 @@ class OffsetSVGPath extends Component {
       >
         <Path
           strokeDasharray={[this.length, this.length]}
-          strokeDashoffset={this.state.offset * this.length}
+          strokeDashoffset={ (1 - this.state.offset) * this.length}
           strokeWidth={strokeWidth}
           stroke={strokeColor}
           scale={scale}

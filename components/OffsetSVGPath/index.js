@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import Svg from 'react-native-svg';
 import {
+  Animated,
   Dimensions,
 } from 'react-native';
 import {
@@ -47,15 +48,21 @@ class OffsetSVGPath extends Component {
     super(props);
     const { d } = this.props;
     const properties = svgPathProperties(d)
-    this.state = {
-      offset: 0,
-    }
+    this.strokeDashoffset = new Animated.Value(0);
+  }
+
+  animateToOffset = (offset) => {
+    Animated.sequence([
+      Animated.delay(0),
+      Animated.timing(this.strokeDashoffset, {
+        toValue: offset,
+        duration: 0.1,
+      })
+    ]).start()
   }
   
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      offset: nextProps.offset,
-    })
+    this.animateToOffset(nextProps.offset)
   }
   render() {
     const {
@@ -77,7 +84,7 @@ class OffsetSVGPath extends Component {
       >
         <Path
           strokeDasharray={[length, length]}
-          strokeDashoffset={ (1 - this.state.offset) * length}
+          strokeDashoffset={ (1 - this.strokeDashoffset) * length}
           strokeWidth={strokeWidth}
           stroke={strokeColor}
           scale={scale}

@@ -27,6 +27,7 @@ class AnimatedSVGPath extends Component {
     fill: PropTypes.string,
     loop: PropTypes.bool,
     lineCap: PropTypes.string,
+    shouldReload: PropTypes.number,
   };
   
   static defaultProps = {
@@ -39,7 +40,8 @@ class AnimatedSVGPath extends Component {
     height,
     width,
     loop: true,
-    lineCap: "butt"
+    lineCap: "butt",
+    shouldReload: 0,
   };
   
   constructor(props) {
@@ -73,7 +75,13 @@ class AnimatedSVGPath extends Component {
   componentDidMount() {
     this.animate();
   }
-  
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.shouldReload !== this.props.shouldReload) {
+      this.animate();
+    }
+  }
+
   render() {
     const {
       d,

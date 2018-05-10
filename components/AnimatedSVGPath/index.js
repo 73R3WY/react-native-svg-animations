@@ -50,6 +50,7 @@ class AnimatedSVGPath extends Component {
     const properties = svgPathProperties(d)
     this.length = properties.getTotalLength();
     this.strokeDashoffset = new Animated.Value(this.length);
+    this.isAnimating = false;
   }
 
   animate = () => {
@@ -58,6 +59,7 @@ class AnimatedSVGPath extends Component {
       duration,
       loop,
     } = this.props;
+    this.isAnimating = true
     this.strokeDashoffset.setValue(this.length);
     Animated.sequence([
       Animated.delay(delay),
@@ -69,6 +71,7 @@ class AnimatedSVGPath extends Component {
       if (loop) {
           this.animate();
       }
+      this.isAnimating = false;
     });
   }
 
@@ -77,7 +80,7 @@ class AnimatedSVGPath extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.shouldReload !== this.props.shouldReload) {
+    if (nextProps.shouldReload !== this.props.shouldReload && this.isAnimating === false) {
       this.animate();
     }
   }

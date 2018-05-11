@@ -32,10 +32,10 @@ import React, {
     
     static defaultProps = {
       r: 12,
-      cx,
-      cy,
+      cx: 0,
+      cy: 0,
       index: -1,
-      triggerIndex,
+      triggerIndex: 0,
       duration: 300,
       height: 300,
       delay: 600,
@@ -72,8 +72,8 @@ import React, {
       ]).start();
     }
 
-    componentWillReceiveProps(nextProps) {
-      if (nextProps.triggerIndex === nextProps.index) {
+    componentDidUpdate(prevProps) {
+      if (this.props.triggerIndex === this.props.index) {
         this.animate();
       }
     }

@@ -1,7 +1,7 @@
 import React, {
     Component,
   } from 'react';
-  import Svg, {
+  import {
     Circle,
   } from 'react-native-svg';
   import {
@@ -10,6 +10,8 @@ import React, {
   
   import AnimatedSvg from '../../utils/AnimatedSVG';
   
+  export const args = ['r'];
+  const NativeSvgCircle = Circle
   class AnimatedCircle extends Component {
     setNativeProps = (props = {}) => {
       this._component && this._component.setNativeProps(props);
@@ -17,7 +19,7 @@ import React, {
     
     render() {
       return (
-        <Circle
+        <NativeSvgCircle
           ref={component => (this._component = component)}
           {...this.props}
         />
@@ -25,5 +27,5 @@ import React, {
     }
   }
   
-  AnimatedCircle = AnimatedSvg(AnimatedCircle);
+  AnimatedCircle = AnimatedSvg(AnimatedCircle,  { propString: args });
   export default AnimatedCircle;

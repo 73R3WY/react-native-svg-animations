@@ -28,7 +28,7 @@ class OffsetSVGPath extends Component {
     loop: PropTypes.bool,
     lineCap: PropTypes.string,
   };
-  
+
   static defaultProps = {
     strokeColor: "black",
     strokeWidth: 1,
@@ -42,21 +42,25 @@ class OffsetSVGPath extends Component {
     lineCap: "butt",
     offset: 0,
   };
-  
+
+  static getDerivedStateFromProps(newProps, prevState) {
+    const newLength = svgPathProperties(newProps.d).getTotalLength()
+    if (newLength !== prevState.length) {
+      return { length: newLength }
+    } else {
+      return null
+    }
+  }
+
   constructor(props) {
     super(props);
     const { d } = this.props;
     const properties = svgPathProperties(d)
     this.state = {
-      offset: 0,
+      length: properties.getTotalLength()
     }
   }
-  
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      offset: nextProps.offset,
-    })
-  }
+
   render() {
     const {
       d,
@@ -67,17 +71,18 @@ class OffsetSVGPath extends Component {
       strokeColor,
       strokeWidth,
       lineCap,
-
+      offset,
     } = this.props
-    const length = svgPathProperties(d).getTotalLength()
+    const { length } = this.state
+    const dashLength = length + strokeWidth
     return (
       <Svg
         height={(height * scale) + 5}
         width={(width * scale) + 5}
       >
         <Path
-          strokeDasharray={[length, length]}
-          strokeDashoffset={ (1 - this.state.offset) * length}
+          strokeDasharray={[dashLength, dashLength]}
+          strokeDashoffset={ dashLength - offset * length}
           strokeWidth={strokeWidth}
           stroke={strokeColor}
           scale={scale}

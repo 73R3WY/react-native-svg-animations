@@ -29,7 +29,7 @@ class AnimatedSVGPath extends Component {
     lineCap: PropTypes.string,
     shouldReload: PropTypes.number,
   };
-  
+
   static defaultProps = {
     strokeColor: "black",
     strokeWidth: 1,
@@ -43,14 +43,28 @@ class AnimatedSVGPath extends Component {
     lineCap: "butt",
     shouldReload: 0,
   };
-  
+
+  static getDerivedStateFromProps(newProps, prevState) {
+    const newDashLength = svgPathProperties(newProps.d).getTotalLength() + newProps.strokeWidth
+    if (newDashLength !== prevState.dashLength) {
+      return {
+        dashLength: newDashLength,
+        strokeDashOffset: new Animated.Value(newDashLength),
+      }
+    } else {
+      return null
+    }
+  }
+
   constructor(props) {
     super(props);
-    const { d } = this.props;
-    const properties = svgPathProperties(d)
-    this.length = properties.getTotalLength();
-    this.strokeDashoffset = new Animated.Value(this.length);
+    const { d, strokeWidth } = this.props;
+    const dashLength = svgPathProperties(d).getTotalLength() + strokeWidth
     this.isAnimating = false;
+    this.state = {
+      strokeDashOffset: new Animated.Value(dashLength),
+      dashLength
+    }
   }
 
   animate = () => {
@@ -58,14 +72,19 @@ class AnimatedSVGPath extends Component {
       delay,
       duration,
       loop,
+      velocity,
     } = this.props;
     this.isAnimating = true
-    this.strokeDashoffset.setValue(this.length);
+    this.state.strokeDashOffset.setValue(this.state.dashLength);
+    let animationDuration = duration
+    if (velocity) {
+      animationDuration = velocity * this.state.dashLength
+    }
     Animated.sequence([
       Animated.delay(delay),
-      Animated.timing(this.strokeDashoffset, {
+      Animated.timing(this.state.strokeDashOffset, {
         toValue: 0,
-        duration: duration,
+        duration: animationDuration,
       })
     ]).start(() => {
       if (loop) {
@@ -79,8 +98,8 @@ class AnimatedSVGPath extends Component {
     this.animate();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.shouldReload !== this.props.shouldReload && this.isAnimating === false) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.shouldReload !== this.props.shouldReload && this.isAnimating === false) {
       this.animate();
     }
   }
@@ -96,14 +115,15 @@ class AnimatedSVGPath extends Component {
       strokeWidth,
       lineCap,
     } = this.props;
+    const { dashLength, strokeDashOffset } = this.state
     return (
       <Svg
         height={(height * scale) + 5}
         width={(width * scale) + 5}
       >
         <Path
-          strokeDasharray={[this.length, this.length]}
-          strokeDashoffset={this.strokeDashoffset}
+          strokeDasharray={[dashLength, dashLength]}
+          strokeDashoffset={strokeDashOffset}
           strokeWidth={strokeWidth}
           stroke={strokeColor}
           scale={scale}

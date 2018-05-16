@@ -16,7 +16,6 @@ class AnimatedSvgPath extends Component {
   }
   
   render() {
-    debugger;
     return (
       <Path
         ref={component => (this._component = component)}

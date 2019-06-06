@@ -104,7 +104,6 @@ import { AnimatedSVGPaths } from 'react-native-svg-animations';
       scale={0.5}
       delay={100}
       ds={ds}
-      loop={false}
     />
   </View>
 ```

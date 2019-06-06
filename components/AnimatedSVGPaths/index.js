@@ -25,6 +25,7 @@ class AnimatedSVGPaths extends Component {
     width: PropTypes.number,
     scale: PropTypes.number,
     fill: PropTypes.string,
+    loop: PropTypes.bool
   };
   
   static defaultProps = {
@@ -53,6 +54,7 @@ class AnimatedSVGPaths extends Component {
       strokeWidth,
       duration,
       delay,
+      loop,
     } = this.props;
 
     const svgPaths = ds.map((d, index) => {
@@ -65,6 +67,7 @@ class AnimatedSVGPaths extends Component {
           scale={scale}
           fill={fill}
           key={index}
+          loop={loop}
           d={d}
         />
       );

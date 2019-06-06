@@ -58,6 +58,7 @@ class AnimatedSvgPaths extends Component {
       Animated.timing(this.strokeDashoffset, {
         toValue: 0,
         duration: duration,
+        useNativeDriver: true
       })
     ]).start(() => {
       if (loop) {

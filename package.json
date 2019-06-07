@@ -24,6 +24,9 @@
     "url": "https://github.com/73R3WY/react-native-svg-animations/issues"
   },
   "homepage": "https://github.com/73R3WY/react-native-svg-animations",
+  "dependencies": {
+    "svg-path-properties": "^0.4.1"
+  },
   "peerDependencies": {
     "react-native-svg": "^9.3.6",
     "svg-path-properties": "^0.4.1"

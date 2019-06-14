@@ -1,6 +1,6 @@
 {
   "name": "react-native-svg-animations",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "SVG Animations wrapper for react-native.",
   "main": "index.js",
   "directories": {

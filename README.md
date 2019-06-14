@@ -133,6 +133,13 @@ where the properties are:
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Contributors
+Special thanks to these developers:
+* <a href="https://github.com/Mr-Bhardwa7">Mr-Bhardwa7</a>
+* <a href="https://github.com/dimofte">dimofte</a>
+* <a href="https://github.com/jvt">jvt</a>
+* <a href="https://github.com/b8ne">b8ne</a>
+
 ## License
 
 MIT

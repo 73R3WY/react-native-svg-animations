@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/73R3WY/react-native-svg-animations",
   "dependencies": {
+    "color": "^3.1.2",
     "svg-path-properties": "^0.4.1"
   },
   "peerDependencies": {

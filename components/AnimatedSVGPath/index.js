@@ -27,7 +27,7 @@ class AnimatedSVGPath extends Component {
     scale: PropTypes.number,
     fill: PropTypes.string,
     loop: PropTypes.bool,
-    transform: PropTypes.string,
+    transform: PropTypes.string
   };
   
   static defaultProps = {

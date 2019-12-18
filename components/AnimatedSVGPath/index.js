@@ -40,8 +40,8 @@ class AnimatedSVGPath extends Component {
     scale: 1,
     height,
     width,
-    loop: true
-    transform,
+    loop: true,
+    transform
   };
   
   constructor(props) {

@@ -63,6 +63,7 @@ class AnimatedSVGPath extends Component {
       duration,
       loop,
       easing,
+      reverse,
     } = this.props;
     this.strokeDashoffset.setValue(this.length);
     Animated.sequence([

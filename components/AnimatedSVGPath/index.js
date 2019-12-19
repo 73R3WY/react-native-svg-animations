@@ -29,7 +29,8 @@ class AnimatedSVGPath extends Component {
     scale: PropTypes.number,
     fill: PropTypes.string,
     loop: PropTypes.bool,
-    transform: PropTypes.string
+    transform: PropTypes.string,
+    reverse: PropTypes.bool
   };
   
   static defaultProps = {
@@ -44,15 +45,16 @@ class AnimatedSVGPath extends Component {
     height,
     width,
     loop: true,
-    transform: ""
+    transform: "",
+    reverse: false
   };
   
   constructor(props) {
     super(props);
-    const { d } = this.props;
+    const { d, reverse } = this.props;
     const properties = svgPathProperties(d)
     this.length = properties.getTotalLength();
-    this.strokeDashoffset = new Animated.Value(this.length);
+    this.strokeDashoffset = new Animated.Value(!reverse ? this.length : 0);
   }
 
   animate = () => {
@@ -66,7 +68,7 @@ class AnimatedSVGPath extends Component {
     Animated.sequence([
       Animated.delay(delay),
       Animated.timing(this.strokeDashoffset, {
-        toValue: 0,
+        toValue: !reverse ? 0 : this.length,
         duration: duration,
         useNativeDriver: true,
         easing: easing

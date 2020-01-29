@@ -6,6 +6,7 @@ import Svg from 'react-native-svg';
 import {
   Animated,
   Dimensions,
+  Easing,
 } from 'react-native';
 import {
   svgPathProperties,
@@ -55,6 +56,7 @@ class AnimatedSVGPath extends Component {
       delay,
       duration,
       loop,
+      easing = 'linear',
     } = this.props;
     this.strokeDashoffset.setValue(this.length);
     Animated.sequence([
@@ -62,6 +64,7 @@ class AnimatedSVGPath extends Component {
       Animated.timing(this.strokeDashoffset, {
         toValue: 0,
         duration: duration,
+        easing: Easing[easing],
         useNativeDriver: true
       })
     ]).start(() => {
@@ -85,6 +88,7 @@ class AnimatedSVGPath extends Component {
       strokeColor,
       strokeWidth,
       strokeLinecap,
+      strokeDashArray: dashArray,
     } = this.props;
     return (
       <Svg
@@ -92,7 +96,7 @@ class AnimatedSVGPath extends Component {
         width={(width * scale) + 5}
       >
         <Path
-          strokeDasharray={[this.length, this.length]}
+          strokeDasharray={ dashArray || [this.length, this.length] }
           strokeDashoffset={this.strokeDashoffset}
           strokeWidth={strokeWidth}
           strokeLinecap={strokeLinecap}

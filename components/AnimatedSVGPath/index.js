@@ -62,7 +62,7 @@ class AnimatedSVGPath extends Component {
       delay,
       duration,
       loop,
-      easing,
+      easing = 'linear',
       reverse,
     } = this.props;
     this.strokeDashoffset.setValue(!reverse ? this.length : 0);
@@ -71,8 +71,8 @@ class AnimatedSVGPath extends Component {
       Animated.timing(this.strokeDashoffset, {
         toValue: !reverse ? 0 : this.length,
         duration: duration,
+        easing: Easing[easing],
         useNativeDriver: true,
-        easing: easing
       })
     ]).start(() => {
       if (loop) {
@@ -95,6 +95,7 @@ class AnimatedSVGPath extends Component {
       strokeColor,
       strokeWidth,
       strokeLinecap,
+      strokeDashArray: dashArray,
       transform,
     } = this.props;
     return (
@@ -103,7 +104,7 @@ class AnimatedSVGPath extends Component {
         width={(width * scale) + 5}
       >
         <Path
-          strokeDasharray={[this.length, this.length]}
+          strokeDasharray={ dashArray || [this.length, this.length] }
           strokeDashoffset={this.strokeDashoffset}
           strokeWidth={strokeWidth}
           strokeLinecap={strokeLinecap}

@@ -21,34 +21,40 @@ class AnimatedSVGPath extends Component {
     strokeColor: PropTypes.string,
     strokeWidth: PropTypes.number,
     strokeLinecap: PropTypes.string,
+    easing: PropTypes.any,
     duration: PropTypes.number,
     height: PropTypes.number,
     delay: PropTypes.number,
     width: PropTypes.number,
     scale: PropTypes.number,
     fill: PropTypes.string,
-    loop: PropTypes.bool
+    loop: PropTypes.bool,
+    transform: PropTypes.string,
+    reverse: PropTypes.bool
   };
   
   static defaultProps = {
     strokeColor: "black",
     strokeWidth: 1,
     strokeLinecap: "butt",
+    easing: Easing.easeInOut,
     duration: 1000,
     delay: 1000,
     fill: "none",
     scale: 1,
     height,
     width,
-    loop: true
+    loop: true,
+    transform: "",
+    reverse: false
   };
   
   constructor(props) {
     super(props);
-    const { d } = this.props;
+    const { d, reverse } = this.props;
     const properties = svgPathProperties(d)
     this.length = properties.getTotalLength();
-    this.strokeDashoffset = new Animated.Value(this.length);
+    this.strokeDashoffset = new Animated.Value(!reverse ? this.length : 0);
   }
 
   animate = () => {
@@ -57,15 +63,16 @@ class AnimatedSVGPath extends Component {
       duration,
       loop,
       easing = 'linear',
+      reverse,
     } = this.props;
-    this.strokeDashoffset.setValue(this.length);
+    this.strokeDashoffset.setValue(!reverse ? this.length : 0);
     Animated.sequence([
       Animated.delay(delay),
       Animated.timing(this.strokeDashoffset, {
-        toValue: 0,
+        toValue: !reverse ? 0 : this.length,
         duration: duration,
         easing: Easing[easing],
-        useNativeDriver: true
+        useNativeDriver: true,
       })
     ]).start(() => {
       if (loop) {
@@ -89,6 +96,7 @@ class AnimatedSVGPath extends Component {
       strokeWidth,
       strokeLinecap,
       strokeDashArray: dashArray,
+      transform,
     } = this.props;
     return (
       <Svg
@@ -103,6 +111,7 @@ class AnimatedSVGPath extends Component {
           stroke={strokeColor}
           scale={scale}
           fill={fill}
+          transform={transform}
           d={d}
         />
       </Svg>

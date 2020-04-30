@@ -50,7 +50,7 @@ class AnimatedSvgPaths extends Component {
   constructor(props) {
     super(props);
     const { d, reverse } = this.props;
-    const properties = svgPathProperties(d)
+    const properties = new svgPathProperties(d)
     this.length = properties.getTotalLength();
     this.strokeDashoffset = new Animated.Value(!reverse ? this.length : 0);
   }

@@ -114,13 +114,12 @@ export default function SvgBrushFix(WrappedComponent) {
       }
       this._component && this._component.setNativeProps(props);
     };
-    componentWillReceiveProps(nextProps) {
-      this.updateCache(nextProps);
-      if (nextProps.strokeDasharray !== this.props.strokeDasharray) {
+    componentDidUpdate(prevProps) {
+      this.updateCache(prevProps);
+      if (this.props.strokeDasharray !== prevProps.strokeDasharray) {
         removeListeners(this.strokeDasharray);
-        this.strokeDasharray = listen(nextProps.strokeDasharray, _ =>
-          this.setNativeProps({ updateStrokeDasharray: true })
-        );
+        this.strokeDasharray = listen(prevProps.strokeDasharray, _ =>
+          this.setNativeProps({ updateStrokeDasharray: true }));
       }
     }
     componentWillUnmount() {

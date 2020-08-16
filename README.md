@@ -153,6 +153,7 @@ Special thanks to these developers:
 - <a href="https://github.com/b8ne">b8ne</a>
 - <a href="https://github.com/hovlev">hovlev</a>
 - <a href="https://github.com/qvick1pro">qvick1pro</a>
+- <a href="https://github.com/TristanTouchain">TristanTouchain</a>
 
 ## License
 

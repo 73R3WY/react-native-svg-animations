@@ -4,8 +4,8 @@
 
 ## Dependencies
 
-* `svg-path-properties` 
-* `react-native-svg`
+- `svg-path-properties`
+- `react-native-svg`
 
 ## Installation
 
@@ -14,6 +14,7 @@ $ npm i react-native-svg-animations --save
 ```
 
 ## Demo
+
 <table>
   <tr>
     <td>
@@ -36,8 +37,9 @@ $ npm i react-native-svg-animations --save
 ## Usage
 
 This package contains wrapper components for displaying animated SVG in react-native, currently, this contains the following:
-* AnimatedSVGPath
-* AnimatedSVGPaths
+
+- AnimatedSVGPath
+- AnimatedSVGPaths
 
 ###### AnimatedSVGPath
 
@@ -47,40 +49,43 @@ See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/e
 <img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/HiSVG/hi_2.gif" width="300">
 
 ```javascript
-import { AnimatedSVGPath } from 'react-native-svg-animations';
+import { AnimatedSVGPath } from "react-native-svg-animations";
 ```
 
 ...
 
 ```javascript
-  <View>
-    <AnimatedSVGPath
-      strokeColor={"green"}
-      duration={500}
-      strokeWidth={10}
-      strokeDashArray = {[42.76482137044271, 42.76482137044271]}
-      height={400}
-      width={400}
-      scale={0.75}
-      delay={100}
-      d={d}
-      loop={false}
-    />
-  </View>
+<View>
+  <AnimatedSVGPath
+    strokeColor={"green"}
+    duration={500}
+    strokeWidth={10}
+    strokeDashArray={[42.76482137044271, 42.76482137044271]}
+    height={400}
+    width={400}
+    scale={0.75}
+    delay={100}
+    d={d}
+    loop={false}
+  />
+</View>
 ```
 
 where the properties are:
-* `d` - the SVG Path to be animated. (required)
-* `strokeColor` - the color of the path stroke. (defaults to black)
-* `strokeWidth` - the thickness of the path stroke. (defaults to 1)
-* `strokeDashArray` - the number and length of strokes. (defaults to total length obtained from properties of d)
-* `height` - the height of the base SVG. (defaults to screen viewport height)
-* `width` - the width of the base SVG. (defaults to screen viewport width)
-* `scale` - the scale of the output SVG based on the width and height of the base SVG. (defaults to 1.0 or 100%)
-* `delay` - time in `ms` before starting animation. (defaults to 1000ms or 1s)
-* `duration` - time in `ms` to complete the path drawing from starting point to ending point. (defaults to 1000ms or 1s)
-* `fill` - the color fill of the closed path. (defaults to none)
-* `loop` - whether the animation loops infinitely. (defaults to true)
+
+- `d` - the SVG Path to be animated. (required)
+- `strokeColor` - the color of the path stroke. (defaults to black)
+- `strokeWidth` - the thickness of the path stroke. (defaults to 1)
+- `strokeDashArray` - the number and length of strokes. (defaults to total length obtained from properties of d)
+- `height` - the height of the base SVG. (defaults to screen viewport height)
+- `width` - the width of the base SVG. (defaults to screen viewport width)
+- `scale` - the scale of the output SVG based on the width and height of the base SVG. (defaults to 1.0 or 100%)
+- `delay` - time in `ms` before starting animation. (defaults to 1000ms or 1s)
+- `duration` - time in `ms` to complete the path drawing from starting point to ending point. (defaults to 1000ms or 1s)
+- `fill` - the color fill of the closed path. (defaults to none)
+- `loop` - whether the animation loops infinitely. (defaults to true)
+- `reverse` - Begins drawn and fades as you go . (defaults to false)
+- `rewind` - the path is rewinded when it was complete. (defaults to false)
 
 ###### AnimatedSVGPaths
 
@@ -90,42 +95,45 @@ See <a href="https://github.com/73R3WY/react-native-svg-animations/tree/master/e
 <img src="https://raw.githubusercontent.com/73R3WY/react-native-svg-animations/master/examples/IngenuityPreloaderSVG/preloader_2.gif" width="300">
 
 ```javascript
-import { AnimatedSVGPaths } from 'react-native-svg-animations';
+import { AnimatedSVGPaths } from "react-native-svg-animations";
 ```
 
 ...
 
 ```javascript
-  <View>
-    <AnimatedSVGPaths
-      strokeColor={"red"}
-      strokeWidth={5}
-      duration={10000}
-      height={600}
-      width={600}
-      scale={0.5}
-      delay={100}
-      ds={ds}
-    />
-  </View>
+<View>
+  <AnimatedSVGPaths
+    strokeColor={"red"}
+    strokeWidth={5}
+    duration={10000}
+    height={600}
+    width={600}
+    scale={0.5}
+    delay={100}
+    ds={ds}
+  />
+</View>
 ```
 
 where the properties are:
-* `ds` - the SVG Paths to be animated, must be an array. (required)
-* `strokeColor` - the color of the path stroke. (defaults to black)
-* `strokeWidth` - the thickness of the path stroke. (defaults to 1)
-* `height` - the height of the base SVG. (defaults to screen viewport height)
-* `width` - the width of the base SVG. (defaults to screen viewport width)
-* `scale` - the scale of the output SVG based on the width and height of the base SVG. (defaults to 1.0 or 100%)
-* `delay` - time in `ms` before starting animation. (defaults to 1000ms or 1s)
-* `duration` - time in `ms` to complete the path drawing from starting point to ending point. (defaults to 1000ms or 1s)
-* `fill` - the color fill of the closed path. (defaults to none)
-* `loop` - whether the animation loops infinitely. (defaults to true)
+
+- `ds` - the SVG Paths to be animated, must be an array. (required)
+- `strokeColor` - the color of the path stroke. (defaults to black)
+- `strokeWidth` - the thickness of the path stroke. (defaults to 1)
+- `height` - the height of the base SVG. (defaults to screen viewport height)
+- `width` - the width of the base SVG. (defaults to screen viewport width)
+- `scale` - the scale of the output SVG based on the width and height of the base SVG. (defaults to 1.0 or 100%)
+- `delay` - time in `ms` before starting animation. (defaults to 1000ms or 1s)
+- `duration` - time in `ms` to complete the path drawing from starting point to ending point. (defaults to 1000ms or 1s)
+- `fill` - the color fill of the closed path. (defaults to none)
+- `loop` - whether the animation loops infinitely. (defaults to true)
+- `reverse` - Begins drawn and fades as you go . (defaults to false)
+- `rewind` - the path is rewinded when it was complete. (defaults to false)
 
 ## TODO
 
-* Accept paths as objects to handle different delays and duration for each of the single path, as well as custom path properties.
-* Other animated SVG objects.
+- Accept paths as objects to handle different delays and duration for each of the single path, as well as custom path properties.
+- Other animated SVG objects.
 
 ## Contributing
 
@@ -136,13 +144,15 @@ where the properties are:
 5. Submit a pull request :D
 
 ## Contributors
+
 Special thanks to these developers:
-* <a href="https://github.com/Mr-Bhardwa7">Mr-Bhardwa7</a>
-* <a href="https://github.com/dimofte">dimofte</a>
-* <a href="https://github.com/jvt">jvt</a>
-* <a href="https://github.com/b8ne">b8ne</a>
-* <a href="https://github.com/hovlev">hovlev</a>
-* <a href="https://github.com/qvick1pro">qvick1pro</a>
+
+- <a href="https://github.com/Mr-Bhardwa7">Mr-Bhardwa7</a>
+- <a href="https://github.com/dimofte">dimofte</a>
+- <a href="https://github.com/jvt">jvt</a>
+- <a href="https://github.com/b8ne">b8ne</a>
+- <a href="https://github.com/hovlev">hovlev</a>
+- <a href="https://github.com/qvick1pro">qvick1pro</a>
 
 ## License
 

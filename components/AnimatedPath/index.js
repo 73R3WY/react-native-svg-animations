@@ -1,19 +1,11 @@
-import React, {
-  PureComponent, Component,
-} from 'react';
-import PropTypes from 'prop-types';
-import {
-  Animated,
-  Dimensions,
-  Easing,
-} from 'react-native';
-import {
-  svgPathProperties,
-} from 'svg-path-properties';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Animated, Dimensions, Easing } from "react-native";
+import { svgPathProperties } from "svg-path-properties";
 
-import Path from '../AnimatedSVG';
+import Path from "../AnimatedSVG";
 
-const { height, width } = Dimensions.get('window');
+const { height, width } = Dimensions.get("window");
 class AnimatedSvgPaths extends Component {
   static propTypes = {
     d: PropTypes.string.isRequired,
@@ -28,9 +20,10 @@ class AnimatedSvgPaths extends Component {
     scale: PropTypes.number,
     loop: PropTypes.bool,
     transform: PropTypes.string,
-    reverse: PropTypes.bool
+    reverse: PropTypes.bool,
+    rewind: PropTypes.bool,
   };
-  
+
   static defaultProps = {
     strokeColor: "black",
     strokeWidth: 1,
@@ -44,52 +37,59 @@ class AnimatedSvgPaths extends Component {
     width,
     loop: true,
     transform: "",
-    reverse: false
+    reverse: false,
+    rewind: false,
   };
-  
+
   constructor(props) {
     super(props);
     const { d, reverse } = this.props;
-    const properties = new svgPathProperties(d)
+    const properties = new svgPathProperties(d);
     this.length = properties.getTotalLength();
     this.strokeDashoffset = new Animated.Value(!reverse ? this.length : 0);
   }
-  
+
   animate = () => {
-    const {
-      delay,
-      duration,
-      loop,
-      easing,
-      reverse,
-    } = this.props;
+    const { delay, duration, loop, easing, reverse } = this.props;
     this.strokeDashoffset.setValue(!reverse ? this.length : 0);
-    Animated.sequence([
-      Animated.delay(delay),
-      Animated.timing(this.strokeDashoffset, {
-        toValue: !reverse ? 0 : this.length,
-        duration: duration,
-        useNativeDriver: true,
-        easing: easing
-      })
-    ]).start(() => {
+    const animationsSequence = [].concat(
+      [
+        Animated.delay(delay),
+        Animated.timing(this.strokeDashoffset, {
+          toValue: !reverse ? 0 : this.length,
+          duration: duration,
+          useNativeDriver: true,
+          easing: easing,
+        }),
+      ],
+      rewind
+        ? [
+            Animated.timing(this.strokeDashoffset, {
+              toValue: !reverse ? this.length : 0,
+              duration: duration,
+              useNativeDriver: true,
+              easing: easing,
+            }),
+          ]
+        : []
+    );
+
+    Animated.sequence(animationsSequence).start(() => {
       if (loop) {
         this.animate();
       }
     });
-  }
+  };
 
   componentDidMount() {
     this.animate();
   }
-  
+
   render() {
     const {
       d,
       fill,
       scale,
-      width,
-      height,
       strokeColor,
       strokeWidth,
       strokeLinecap,
@@ -115,5 +115,5 @@ class AnimatedSvgPaths extends Component {
 
 module.exports = AnimatedSvgPaths;
 module.exports.details = {
-  title: 'AnimatedSvgPaths',
+  title: "AnimatedSvgPaths",
 };

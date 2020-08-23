@@ -50,7 +50,14 @@ class AnimatedSvgPaths extends Component {
   }
 
   animate = () => {
-    const { delay, duration, loop, easing, reverse } = this.props;
+    const {
+      delay,
+      duration,
+      loop,
+      easing,
+      reverse,
+      rewind,
+    } = this.props;
     this.strokeDashoffset.setValue(!reverse ? this.length : 0);
     const animationsSequence = [].concat(
       [
@@ -64,13 +71,13 @@ class AnimatedSvgPaths extends Component {
       ],
       rewind
         ? [
-            Animated.timing(this.strokeDashoffset, {
-              toValue: !reverse ? this.length : 0,
-              duration: duration,
-              useNativeDriver: true,
-              easing: easing,
-            }),
-          ]
+          Animated.timing(this.strokeDashoffset, {
+            toValue: !reverse ? this.length : 0,
+            duration: duration,
+            useNativeDriver: true,
+            easing: easing,
+          }),
+        ]
         : []
     );
 

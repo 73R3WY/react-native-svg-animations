@@ -146,7 +146,6 @@ where the properties are:
 ## Contributors
 
 Special thanks to these developers:
-
 - <a href="https://github.com/Mr-Bhardwa7">Mr-Bhardwa7</a>
 - <a href="https://github.com/dimofte">dimofte</a>
 - <a href="https://github.com/jvt">jvt</a>
@@ -154,6 +153,7 @@ Special thanks to these developers:
 - <a href="https://github.com/hovlev">hovlev</a>
 - <a href="https://github.com/qvick1pro">qvick1pro</a>
 - <a href="https://github.com/TristanTouchain">TristanTouchain</a>
+- <a href="https://github.com/nitzanbener">nitzanbener</a>
 
 ## License
 

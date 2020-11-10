@@ -56,7 +56,7 @@ class AnimatedSVGPath extends Component {
       delay,
       duration,
       loop,
-      easing = "linear",
+      easing = Easing["linear"],
       reverse,
       rewind,
     } = this.props;
@@ -68,7 +68,7 @@ class AnimatedSVGPath extends Component {
           toValue: !reverse ? 0 : this.length,
           duration: duration,
           useNativeDriver: true,
-          easing: Easing[easing],
+          easing: typeof easing === 'function' ? easing : Easing[easing],
         }),
       ],
       rewind
@@ -77,7 +77,7 @@ class AnimatedSVGPath extends Component {
             toValue: !reverse ? this.length : 0,
             duration: duration,
             useNativeDriver: true,
-            easing: Easing[easing],
+            easing: typeof easing === 'function' ? easing : Easing[easing],
           }),
         ]
         : []

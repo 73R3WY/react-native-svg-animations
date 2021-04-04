@@ -60,6 +60,7 @@ import { AnimatedSVGPath } from "react-native-svg-animations";
     strokeColor={"green"}
     duration={500}
     strokeWidth={10}
+    strokeLinecap={"round"}
     strokeDashArray={[42.76482137044271, 42.76482137044271]}
     height={400}
     width={400}
@@ -76,6 +77,7 @@ where the properties are:
 - `d` - the SVG Path to be animated. (required)
 - `strokeColor` - the color of the path stroke. (defaults to black)
 - `strokeWidth` - the thickness of the path stroke. (defaults to 1)
+- `strokeLinecap` - the shape to be used at the end of open subpaths when they are stroked. (defaults to butt)
 - `strokeDashArray` - the number and length of strokes. (defaults to total length obtained from properties of d)
 - `height` - the height of the base SVG. (defaults to screen viewport height)
 - `width` - the width of the base SVG. (defaults to screen viewport width)

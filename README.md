@@ -130,7 +130,7 @@ where the properties are:
 - `loop` - whether the animation loops infinitely. (defaults to true)
 - `reverse` - Begins drawn and fades as you go . (defaults to false)
 - `rewind` - the path is rewound when it was complete. (defaults to false)
-- `sequential` - paths start to animate sequentially with the delay between them specified in the `delay` prop. (defaults to false)
+- `sequential` - paths start to animate sequentially with the delay between them specified in the `delay` prop, and wait for the last one to finish before a new animation begins. (defaults to false)
 - `ds` - the SVG Paths to be animated, must be an array; either this or `customSvgProps` is required.
 - `customSvgProps` - an array of objects to define path properties; other properties will be overwritten by the values defined in these objects; either this or `ds` is required.
   ```javascript

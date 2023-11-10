@@ -102,7 +102,7 @@ class AnimatedSVGPaths extends Component {
       }
       
       if (sequential) {
-        pathProps.pause = (svgArray.length - 1 - index) * 2 * delay
+        pathProps.pause = (svgArray.length - 1 - index) * delay * (rewind ? 2 : 1)
       }
       
       if (pause) {

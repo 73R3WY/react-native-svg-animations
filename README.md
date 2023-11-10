@@ -81,11 +81,12 @@ where the properties are:
 - `width` - the width of the base SVG. (defaults to screen viewport width)
 - `scale` - the scale of the output SVG based on the width and height of the base SVG. (defaults to 1.0 or 100%)
 - `delay` - time in `ms` before starting animation. (defaults to 1000ms or 1s)
+- `pause` - time in `ms` to pause at the end of the animation or at the half point of a rewound animation. (defaults 0)
 - `duration` - time in `ms` to complete the path drawing from starting point to ending point. (defaults to 1000ms or 1s)
 - `fill` - the color fill of the closed path. (defaults to none)
 - `loop` - whether the animation loops infinitely. (defaults to true)
 - `reverse` - Begins drawn and fades as you go . (defaults to false)
-- `rewind` - the path is rewinded when it was complete. (defaults to false)
+- `rewind` - the path is rewound when it was complete. (defaults to false)
 
 ###### AnimatedSVGPaths
 
@@ -117,18 +118,41 @@ import { AnimatedSVGPaths } from "react-native-svg-animations";
 
 where the properties are:
 
-- `ds` - the SVG Paths to be animated, must be an array. (required)
 - `strokeColor` - the color of the path stroke. (defaults to black)
 - `strokeWidth` - the thickness of the path stroke. (defaults to 1)
 - `height` - the height of the base SVG. (defaults to screen viewport height)
 - `width` - the width of the base SVG. (defaults to screen viewport width)
 - `scale` - the scale of the output SVG based on the width and height of the base SVG. (defaults to 1.0 or 100%)
 - `delay` - time in `ms` before starting animation. (defaults to 1000ms or 1s)
+- `pause` - time in `ms` to pause at the end of the animation or at the half point of a rewound animation. (defaults 0)
 - `duration` - time in `ms` to complete the path drawing from starting point to ending point. (defaults to 1000ms or 1s)
 - `fill` - the color fill of the closed path. (defaults to none)
 - `loop` - whether the animation loops infinitely. (defaults to true)
 - `reverse` - Begins drawn and fades as you go . (defaults to false)
-- `rewind` - the path is rewinded when it was complete. (defaults to false)
+- `rewind` - the path is rewound when it was complete. (defaults to false)
+- `sequential` - paths start to animate sequentially with the delay between them specified in the `delay` prop. (defaults to false)
+- `ds` - the SVG Paths to be animated, must be an array; either this or `customSvgProps` is required.
+- `customSvgProps` - an array of objects to define path properties; other properties will be overwritten by the values defined in these objects; either this or `ds` is required.
+  ```javascript
+  <AnimatedSVGPaths
+    //...
+    customSvgProps={[
+      {
+        d: "M 10 10 C 20 20, 40 20, 50 10",
+        strokeColor: 'blue',
+        strokeWidth: 1
+        //...
+      },
+      {
+        d: "M 70 10 C 70 20, 110 20, 110 10",
+        strokeColor: 'red',
+        strokeWidth: 3
+        //...
+      },
+    ]}
+    //...
+  />  
+  ```
 
 ## TODO
 

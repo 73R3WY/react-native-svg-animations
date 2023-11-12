@@ -156,7 +156,6 @@ where the properties are:
 
 ## TODO
 
-- Accept paths as objects to handle different delays and duration for each of the single path, as well as custom path properties.
 - Other animated SVG objects.
 
 ## Contributing

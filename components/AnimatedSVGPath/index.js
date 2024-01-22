@@ -17,6 +17,7 @@ class AnimatedSVGPath extends Component {
     duration: PropTypes.number,
     height: PropTypes.number,
     delay: PropTypes.number,
+    pause: PropTypes.number,
     width: PropTypes.number,
     scale: PropTypes.number,
     fill: PropTypes.string,
@@ -33,6 +34,7 @@ class AnimatedSVGPath extends Component {
     easing: Easing.easeInOut,
     duration: 1000,
     delay: 1000,
+    pause: 0,
     fill: "none",
     scale: 1,
     height,
@@ -49,21 +51,24 @@ class AnimatedSVGPath extends Component {
     const properties = new svgPathProperties(d);
     this.length = properties.getTotalLength();
     this.strokeDashoffset = new Animated.Value(!reverse ? this.length : 0);
+    this.loopCount = 0;
   }
 
   animate = () => {
     const {
       delay,
+      pause,
       duration,
       loop,
       easing = Easing["linear"],
       reverse,
       rewind,
     } = this.props;
+    
     this.strokeDashoffset.setValue(!reverse ? this.length : 0);
     const animationsSequence = [].concat(
       [
-        Animated.delay(delay),
+        Animated.delay(delay * (this.loopCount ? 2 : 1)),
         Animated.timing(this.strokeDashoffset, {
           toValue: !reverse ? 0 : this.length,
           duration: duration,
@@ -71,6 +76,9 @@ class AnimatedSVGPath extends Component {
           easing: typeof easing === 'function' ? easing : Easing[easing],
         }),
       ],
+      pause
+        ? [Animated.delay(pause)]
+        : [],
       rewind
         ? [
           Animated.timing(this.strokeDashoffset, {
@@ -88,6 +96,8 @@ class AnimatedSVGPath extends Component {
         this.animate();
       }
     });
+    
+    this.loopCount = 1;
   };
 
   componentDidMount() {

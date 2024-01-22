@@ -10,7 +10,11 @@
 ## Installation
 
 ```
-$ npm i react-native-svg-animations --save
+npm i react-native-svg-animations --save
+```
+or
+```
+yarn add react-native-svg-animations
 ```
 
 ## Demo
@@ -170,15 +174,87 @@ where the properties are:
 
 ## Contributors
 
-Special thanks to these developers:
-- <a href="https://github.com/Mr-Bhardwa7">Mr-Bhardwa7</a>
-- <a href="https://github.com/dimofte">dimofte</a>
-- <a href="https://github.com/jvt">jvt</a>
-- <a href="https://github.com/b8ne">b8ne</a>
-- <a href="https://github.com/hovlev">hovlev</a>
-- <a href="https://github.com/qvick1pro">qvick1pro</a>
-- <a href="https://github.com/TristanTouchain">TristanTouchain</a>
-- <a href="https://github.com/nitzanbener">nitzanbener</a>
+Special thanks to these contributors:
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/Mr-Bhardwa7">
+          <img src="https://avatars.githubusercontent.com/u/40822939?v=3?s=100" width="100px;" alt="Mr-Bhardwa7"/>
+          <br />
+          <sub><b>Mr-Bhardwa7</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/dimofte">
+          <img src="https://avatars.githubusercontent.com/u/4060827?v=3?s=100" width="100px;" alt="dimofte"/>
+          <br />
+          <sub><b>dimofte</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/jvt">
+          <img src="https://avatars.githubusercontent.com/u/2718101?v=3?s=100" width="100px;" alt="jvt"/>
+          <br />
+          <sub><b>jvt</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/b8ne">
+          <img src="https://avatars.githubusercontent.com/u/19263633?v=3?s=100" width="100px;" alt="b8ne"/>
+          <br />
+          <sub><b>b8ne</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/hovlev">
+          <img src="https://avatars.githubusercontent.com/u/1330309?v=3?s=100" width="100px;" alt="hovlev"/>
+          <br />
+          <sub><b>hovlev</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/qvick1pro">
+          <img src="https://avatars.githubusercontent.com/u/12903197?v=3?s=100" width="100px;" alt="qvick1pro"/>
+          <br />
+          <sub><b>qvick1pro</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/TristanTouchain">
+          <img src="https://avatars.githubusercontent.com/u/36477156?v=3?s=100" width="100px;" alt="TristanTouchain"/>
+          <br />
+          <sub><b>TristanTouchain</b></sub>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/nitzanbener">
+          <img src="https://avatars.githubusercontent.com/u/44496859?v=3?s=100" width="100px;" alt="nitzanbener"/>
+          <br />
+          <sub><b>nitzanbener</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/muh-hamada">
+          <img src="https://avatars.githubusercontent.com/u/56512406?v=3?s=100" width="100px;" alt="muh-hamada"/>
+          <br />
+          <sub><b>muh-hamada</b></sub>
+        </a>
+      </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://github.com/benomatis">
+          <img src="https://avatars.githubusercontent.com/u/5822748?v=3?s=100" width="100px;" alt="benomatis"/>
+          <br />
+          <sub><b>benomatis</b></sub>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## License
 

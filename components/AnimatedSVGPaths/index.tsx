@@ -76,9 +76,7 @@ const AnimatedSVGPaths: React.FC<AnimatedSvgPathsProps> = ({
     }
 
     return (
-      <Path
-        {...pathProps}
-      />
+      <Path {...pathProps}/>
     )
   })
 

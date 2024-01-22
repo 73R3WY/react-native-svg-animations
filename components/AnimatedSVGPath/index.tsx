@@ -48,7 +48,7 @@ const AnimatedSVGPath: React.FC<AnimatedSVGPathProps> = ({
   strokeDasharray,
   pause = 0,
 }) => {
-  const [loopCount, setLoopCount] = useState<number>(0)
+  let loopCount = 0
   const properties = new svgPathProperties(d)
   const length = properties.getTotalLength()
   const strokeDashoffset = new Animated.Value(!reverse ? length : 0)
@@ -86,7 +86,7 @@ const AnimatedSVGPath: React.FC<AnimatedSVGPathProps> = ({
       }
     })
 
-    setLoopCount(1)
+    loopCount = 1
   }
 
   useEffect(() => {

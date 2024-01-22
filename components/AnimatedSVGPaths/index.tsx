@@ -4,7 +4,10 @@ import { Dimensions } from 'react-native'
 import Path from '../AnimatedPath'
 import { AnimatedSVGPathProps } from '../AnimatedSVGPath'
 
-const { height, width } = Dimensions.get('window')
+const {
+  height: windowHeight,
+  width: windowWidth,
+} = Dimensions.get('window')
 
 export type CustomSVGPathProps = AnimatedSVGPathProps
 
@@ -38,6 +41,8 @@ const AnimatedSVGPaths: React.FC<AnimatedSvgPathsProps> = ({
   rewind = false,
   pause = 0,
   sequential = false,
+  height = windowHeight,
+  width = windowWidth,
 }) => {
   const svgArray = ds.length > 0
     ? ds
@@ -59,6 +64,8 @@ const AnimatedSVGPaths: React.FC<AnimatedSvgPathsProps> = ({
       loop,
       rewind,
       d: '',
+      height,
+      width,
     }
 
     if (typeof d === 'string') {

@@ -179,6 +179,8 @@ Special thanks to these developers:
 - <a href="https://github.com/qvick1pro">qvick1pro</a>
 - <a href="https://github.com/TristanTouchain">TristanTouchain</a>
 - <a href="https://github.com/nitzanbener">nitzanbener</a>
+- <a href="https://github.com/muh-hamada">muh-hamada</a>
+- <a href="https://github.com/benomatis">benomatis</a>
 
 ## License
 
